@@ -1,14 +1,27 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th12 30, 2023 lúc 05:53 PM
+-- Phiên bản máy phục vụ: 10.4.32-MariaDB
+-- Phiên bản PHP: 8.2.12
 
-INSERT INTO `admin_accounts` (`admin_id`, `username`, `password`) VALUES
-(1, 'hiihiihihih', '0'),
-(3, 'admin', '123'),
-(4, 'hai', '123'),
-(5, 'haiba', '123'),
-(6, 'hihi', '$2y$10$Crg4E9d9iy9dsJ8Rc29BTOkMj5TF8u7xG59pUbIj0rlQJUl6SSykq'),
-(7, 'hsi', '$2y$10$w6bupW5tC0PhqJPAqCNRdOx5J1bCRpXRQFgXFdeaGJoLaL6Rz1UNC'),
-(8, 'haii', '$2y$10$Z5p3sySq6QLeeTVw4XpFrOn0JbWXnQKz0MVkDVinYE166qfdMiyIO'),
-(9, 'hii', '$2y$10$5FQnQR6dKPDT0Fru5X0exeH1HaRY41vEviDdC1WaD36BbohMxPmHm');
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Cơ sở dữ liệu: `taikhoan`
+--
+
+-- --------------------------------------------------------
 
 --
 -- Cấu trúc bảng cho bảng `bikes`
@@ -97,7 +110,8 @@ INSERT INTO `cart` (`cart_id`, `user_id`, `bike_id`, `bike_name`, `price`, `disc
 (35, 6, 3, 'A:1R Adventure Road Bike', 1190.00, 725.90, 'https://www.sefiles.net/images/library/small/roll-bicycle-company-a1r-adventure-road-bike-405431-1.png', 1, 'M'),
 (36, 6, 1, 'Cannondale Topstone 2', 2450.00, 2156.00, 'https://d2lljesbicak00.cloudfront.net/merida-v2/crud-card//master/bikes/2024/ONE-FORTY_6000_blured_MY24.tif?p3', 1, 'X'),
 (176, 4, 20, 'REACTO 7000\r\n', 1040.00, 936.00, 'https://d2lljesbicak00.cloudfront.net/merida-v2/crud-zoom-img//master/bikes/2024/REACTO_7000_redblk_MY24.tif?p3', 1, 'S'),
-(177, 4, 26, 'eSPRESSO L 775 EQ\r\n', 900.00, 630.00, 'https://d2lljesbicak00.cloudfront.net/merida-v2/crud-zoom-img//master/bikes/2024/REACTO_RIVAL-EDITION_cmpblu_MY24.tif?p3', 1, 'L');
+(177, 4, 26, 'eSPRESSO L 775 EQ\r\n', 900.00, 630.00, 'https://d2lljesbicak00.cloudfront.net/merida-v2/crud-zoom-img//master/bikes/2024/REACTO_RIVAL-EDITION_cmpblu_MY24.tif?p3', 1, 'L'),
+(178, 4, 20, 'REACTO 7000\r\n', 1040.00, 936.00, 'https://d2lljesbicak00.cloudfront.net/merida-v2/crud-zoom-img//master/bikes/2024/REACTO_7000_redblk_MY24.tif?p3', 1, ' M');
 
 -- --------------------------------------------------------
 
@@ -112,6 +126,24 @@ CREATE TABLE `comments` (
   `comment_content` text DEFAULT NULL,
   `created_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `comments`
+--
+
+INSERT INTO `comments` (`id`, `post_id`, `user_id`, `comment_content`, `created_at`) VALUES
+(12, 18, 6, 'đẹp lắm nha', '2023-09-08 16:44:16'),
+(15, 24, 5, 'Its very beautiful !', '2023-09-08 22:50:32'),
+(17, 29, 4, 'beautifull', '2023-10-04 20:21:45'),
+(18, 34, 9, 'hihhi', '2023-11-06 23:46:39'),
+(19, 35, 4, 'ok k', '2023-12-10 03:29:57'),
+(20, 34, 4, 'ok', '2023-12-10 03:30:10'),
+(24, 37, 13, 'ok đấy', '2023-12-10 16:31:18'),
+(25, 24, 13, 'ok đấy', '2023-12-10 16:33:58'),
+(27, 38, 4, 'xe đẹp!', '2023-12-10 19:00:13'),
+(28, 40, 4, 'ok đấy', '2023-12-19 10:22:44');
+
+-- --------------------------------------------------------
 
 --
 -- Cấu trúc bảng cho bảng `discount_codes`
@@ -180,15 +212,6 @@ CREATE TABLE `order_details` (
   `quantity` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Đang đổ dữ liệu cho bảng `order_details`
---
-
-INSERT INTO `order_details` (`cart_id`, `id`, `total_amount`, `payment_status`, `created_at`, `customer_name`, `customer_address`, `customer_phone`, `customer_email`, `payment_method`, `note`, `approved`, `quantity`) VALUES
-(113477, 4, 4609.80, 'Pending', '2023-12-24 03:09:05', 'Nguyễn Bá Hải', '29', '2222222222', 'haiba@gmail.com', '', '', 0, '5'),
-(113478, 4, 4609.80, 'Pending', '2023-12-24 03:11:41', 'Nguyễn Bá Hải', '29', '2222222222', 'haiba@gmail.com', '', '', 0, '5'),
-(113487, 4, 1659.30, 'Pending', '2023-12-28 15:44:57', 'qd', '29', '2222222222', 'haiba@gmail.com', '', '', 0, '2');
-
 -- --------------------------------------------------------
 
 --
@@ -205,15 +228,6 @@ CREATE TABLE `order_items` (
   `total_price` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Đang đổ dữ liệu cho bảng `order_items`
---
-
-INSERT INTO `order_items` (`order_item_id`, `cart_id`, `user_id`, `bike_id`, `quantity`, `frame_size`, `total_price`) VALUES
-(15, NULL, 4, 23, 1, 'Xl', 0.00),
-(16, NULL, 4, 1, 1, ' M', 0.00),
-(17, NULL, 4, 26, 1, 'M', 0.00);
-
 -- --------------------------------------------------------
 
 --
@@ -228,6 +242,19 @@ CREATE TABLE `posts` (
   `image_path` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `posts`
+--
+
+INSERT INTO `posts` (`id`, `user_id`, `content`, `created_at`, `image_path`) VALUES
+(18, 5, 'xe mới nhất 2023', '2023-09-06 18:58:46', 'uploads/64f92e56f3b6f_bikenew1.jpg'),
+(24, 7, 'I love this bike', '2023-09-08 08:48:06', 'uploads/64fb423622275_bikenew1.jpg'),
+(29, 5, 'When I run out of money, I need to sell it for $400', '2023-09-14 03:56:55', 'uploads/6502e6f71e2c6_bikes46.jpg'),
+(38, 13, 'ok k', '2023-12-10 09:33:32', 'uploads/657585ecbb7b8_SCULTURA_RIVAL-EDITION_bluslv_MY24.jpg'),
+(39, 4, 'hãy đánh giá về chiếc xe này', '2023-12-10 11:25:06', 'uploads/6575a0126b216_SCULTURA_200_grnslv_MY2024.jpg'),
+(40, 4, 'xe đẹp không\r\n', '2023-12-10 11:29:35', 'uploads/6575a11f30072_SCULTURA_RIVAL-EDITION_bluslv_MY24.jpg');
+
+-- --------------------------------------------------------
 
 --
 -- Cấu trúc bảng cho bảng `users`
@@ -255,7 +282,6 @@ INSERT INTO `users` (`id`, `username`, `password`, `is_admin`) VALUES
 
 -- --------------------------------------------------------
 
-
 --
 -- Cấu trúc bảng cho bảng `user_favorite_cart`
 --
@@ -265,7 +291,9 @@ CREATE TABLE `user_favorite_cart` (
   `cart_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-
+--
+-- Chỉ mục cho các bảng đã đổ
+--
 
 --
 -- Chỉ mục cho bảng `bikes`
@@ -282,6 +310,13 @@ ALTER TABLE `cart`
   ADD KEY `id` (`user_id`),
   ADD KEY `fk_cart_bike` (`bike_id`);
 
+--
+-- Chỉ mục cho bảng `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `post_id` (`post_id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Chỉ mục cho bảng `discount_codes`
@@ -306,13 +341,18 @@ ALTER TABLE `order_items`
   ADD KEY `fk_bikes_bike_id` (`bike_id`),
   ADD KEY `fk_users_user_id` (`user_id`);
 
+--
+-- Chỉ mục cho bảng `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
-
 
 --
 -- Chỉ mục cho bảng `user_favorite_cart`
@@ -325,7 +365,6 @@ ALTER TABLE `user_favorite_cart`
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
-
 --
 -- AUTO_INCREMENT cho bảng `bikes`
 --
@@ -336,8 +375,13 @@ ALTER TABLE `bikes`
 -- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=178;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=179;
 
+--
+-- AUTO_INCREMENT cho bảng `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT cho bảng `discount_codes`
@@ -349,7 +393,7 @@ ALTER TABLE `discount_codes`
 -- AUTO_INCREMENT cho bảng `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113488;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113489;
 
 --
 -- AUTO_INCREMENT cho bảng `order_items`
@@ -357,13 +401,17 @@ ALTER TABLE `order_details`
 ALTER TABLE `order_items`
   MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
+--
+-- AUTO_INCREMENT cho bảng `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -390,3 +438,7 @@ ALTER TABLE `order_items`
   ADD CONSTRAINT `fk_order_details_cart_id` FOREIGN KEY (`cart_id`) REFERENCES `order_details` (`cart_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_users_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

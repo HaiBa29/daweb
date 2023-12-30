@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+.vocher {
+  width: 260px;
+  height: 115px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+  background-color: #f8f2f2;
+  padding: 10px 10px;
+  position: relative;
+}
+
+.main,
+.copy-button {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  align-items: center;
+}
+.vocher::after {
+  position: absolute;
+  content: "";
+  height: 30px;
+  right: -25px;
+  border-radius: 40px;
+  z-index: 1;
+  top: 45px;
+  /* dấu tròn bên phải*/
+  background-color: white;
+  width: 40px;
+}
+
+.vocher::before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  left: -25px;
+  border-radius: 40px;
+  z-index: 1;
+  top: 45px;
+   /* dấu tròn bên trái*/
+  background-color: white;
+  width: 40px;
+}
+
+.co-img img {
+  width: 70px;
+  height: 70px;
+}
+.vertical {
+  border-left: 5px dotted black;
+  height: 55px;
+  position: absolute;
+  left: 30%;
+  margin-top: -15px;
+}
+
+.content h1 {
+  font-size: 25px;
+  margin-left: -40px;
+  color: #565656;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.content h1 span {
+  font-size: 16px;
+ 
+}
+.content h2 {
+  font-size: 16px;
+margin-bottom: 0px;
+  margin-left: -40px;
+  color: #565656;
+  text-transform: uppercase;
+}
+
+.content p {
+  font-size: 10px;
+  color: #696969;
+  margin-left: -40px;
+}
+
+.copy-button {
+  margin: -15px 0px 0px 0px;
+  height: 20px;
+  border-radius: 4px;
+  padding: 0 0px;
+
+  border: 1px solid white;
+}
+
+.copy-button input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 8px;
+}
+
+.copy-button button {
+  padding: 1px 0px;
+  margin-right: px;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  background-color: #b96f6f;
+  color: black;
+  font-weight: 600;
+  font-size: 9px;
+  border: 1px  solid transparent;
+}
+
+.buy{
+ position: absolute;
+  content: "";
+  bottom: 20px;
+  left:20px;
+  background-color: #dc143c;
+ }

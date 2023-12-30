@@ -1,0 +1,35 @@
+.content {
+  margin-left: 60px;
+}
+#copyvalue {
+font-size: 14px;
+}
+#using {
+  font-size: 13px;
+}
+.container {
+  margin-top: 20px;
+  width: 1rem;
+}
+.icon-hover-primary:hover {
+    border-color: #3b71ca !important;
+    background-color: white !important;
+  }
+  
+  .icon-hover-primary:hover i {
+    color: #3b71ca !important;
+  }
+  .icon-hover-danger:hover {
+    border-color: #dc4c64 !important;
+    background-color: white !important;
+  }
+  
+  .icon-hover-danger:hover i {
+    color: #dc4c64 !important;
+  }
+  .text-dark{
+    font-size: 10px;
+  }
+  .text-muted{
+font-size: 11px;
+  }

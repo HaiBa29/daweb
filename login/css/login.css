@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ecfcff;
+  background-image: url("https://giantmelbourne.com.au/cdn/shop/articles/Giant_Partners_with_BEX_1800x.jpg?v=1643608173");
+  background-size: cover;
+  background-position: center;
+}
+
+h1 {
+  font-family: "Girassol", cursive;
+  font-size: 24px;
+}
+
+.form {
+  border-radius: 10px;
+  padding: 20px;
+  margin: 50px auto;
+  max-width: 400px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 100%;
+}
+
+.tabs {
+  border-radius: 5%;
+  width: 400px;
+  height: 500px;
+  position: relative;
+  margin: 6% auto;
+  background: white;
+  padding: 5px;
+  overflow: hidden;
+}
+.tab-selection {
+  width: 220px;
+  margin: 35px auto;
+  position: relative;
+  border-radius: 30px;
+  box-shadow: 0 0 20px 9px #ecfcff;
+}
+.toggle-button {
+  padding: 10px 30px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  position: relative;
+  outline: none;
+}
+#butn {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 110px;
+  background: linear-gradient(to right, #5edfff, #b2fcff);
+  border-radius: 30px;
+  transition: 0.5s;
+}
+.details {
+  top: 90px;
+  position: absolute;
+  width: 280px;
+  transition: 0.5s;
+}
+.field {
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-right: 0;
+  border-left: 0;
+  border-top: 0;
+  border-bottom: 1px solid #999;
+  background: transparent;
+}
+.sub-btn {
+  width: 85%;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  padding: 10px 30px;
+  background: linear-gradient(to right, #5edfff, #b2fcff);
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+}
+.checkbox {
+  margin: 30px 10px 30px 0;
+  font-family: "Kulim Park", sans-serif;
+}
+span {
+  color: #777;
+  font-size: 15px;
+  bottom: 70px;
+  position: absolute;
+}
+#login {
+  left: 50px;
+}
+#signup {
+  left: 450px;
+}
